@@ -1,10 +1,13 @@
-# If you come from bash you might have to change your $PATH.
+#  If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Path to your oh-my-zsh installation.
-export HOME_BKP="$HOME"
-#export ZSH="$HOME/.dotfiles/zsh/.oh-my-zsh"
-export HOME="$HOME/.dotfiles/zsh"
+# export HOME_BKP="$HOME"
+# export ZSH="$HOME/.dotfiles/zsh/.oh-my-zsh"
+# export HOME="$HOME/.dotfiles/zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -12,15 +15,16 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="bira"
+# ZSH_THEME="bira"
 # ZSH_THEME="bureau"
-
+# ZSH_THEME="wezm"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME=random
+ZSH_THEME_RANDOM_CANDIDATES=( "wezm" "bira" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -75,7 +79,8 @@ ZSH_THEME="bira"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
-plugins=(git colored-man-pages colorize pip python brew osx zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git colored-man-pages colorize pip python pyenv brew osx zsh-autosuggestions zsh-syntax-highlighting)
+
 
 
 source $ZSH/oh-my-zsh.sh
@@ -101,11 +106,13 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
+source $HOME/.dotfiles/.aliases
 
+# export HOME="$HOME_BKP"
 
-export HOME="$HOME_BKP"
+# $ title tabName
+function title {
+    echo -ne "\033]0;"$(whoami)"\007"
+}
+
