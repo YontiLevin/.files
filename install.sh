@@ -3,7 +3,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	# zsh
     	sudo apt-get update 
 	sudo apt-get install -y zsh 
-	sudo chsh -s /bin/zsh ubuntu 
+	sudo chsh -s /bin/zsh $(whoami) 
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 	# solarized
@@ -29,5 +29,7 @@ fi
 
 cd ~
 
+# pyenv
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
-
+exec "$SHELL"
