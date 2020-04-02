@@ -8,17 +8,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 	# autosuggestion
 	export ub_version=$(lsb_release -r | awk '{print $2}')
-	sudo sh -c "echo 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-autosuggestions/xUbuntu_$ub_version/ /' > /etc/apt/sources.list.d/shells:zsh-users:zsh-autosuggestions.list"
-	wget -nv https://download.opensuse.org/repositories/shells:zsh-users:zsh-autosuggestions/xUbuntu_$ub_version/Release.key -O Release.key
-	sudo apt-key add - < Release.key
-	sudo apt-get update
-	sudo apt-get install zsh-autosuggestions
-
-	sudo sh -c "echo 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-syntax-highlighting/xUbuntu_$ub_version/ /' > /etc/apt/sources.list.d/shells:zsh-users:zsh-syntax-highlighting.list"
-	wget -nv https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/xUbuntu_ub_version/Release.key -O Release.key
-	sudo apt-key add - < Release.key
-	sudo apt-get update
-	sudo apt-get install zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 	# solarized
 	sudo apt-get install dconf-cli
