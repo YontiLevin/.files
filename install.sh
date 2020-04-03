@@ -35,7 +35,7 @@ fi
 cd ~
 
 # pyenv
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+sudo git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+sudo git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 
 exec "$SHELL"
