@@ -38,4 +38,7 @@ cd ~
 sudo git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 sudo git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 
+sudo rm -r .zshrc
+sudo ln -s .dotfiles/zsh/.zshrc .zshrc
+
 exec "$SHELL"
