@@ -119,3 +119,5 @@ function title {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv time)
+
