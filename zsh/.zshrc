@@ -18,13 +18,14 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="bira"
 # ZSH_THEME="bureau"
 # ZSH_THEME="wezm"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME=random
-ZSH_THEME_RANDOM_CANDIDATES=( "wezm" "bira" )
+# ZSH_THEME=random
+# ZSH_THEME_RANDOM_CANDIDATES=( "wezm" "bira" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -71,7 +72,7 @@ ZSH_THEME_RANDOM_CANDIDATES=( "wezm" "bira" )
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -80,8 +81,6 @@ ZSH_THEME_RANDOM_CANDIDATES=( "wezm" "bira" )
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
 plugins=(git colored-man-pages colorize pip python pyenv brew osx zsh-autosuggestions zsh-syntax-highlighting)
-
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,3 +115,5 @@ function title {
     echo -ne "\033]0;"$(whoami)"\007"
 }
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

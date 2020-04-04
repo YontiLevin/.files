@@ -6,11 +6,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	sudo chsh -s /bin/zsh $(whoami) 
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
-	# autosuggestion
-	export ub_version=$(lsb_release -r | awk '{print $2}')
-	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
 	# solarized
 	sudo apt-get install dconf-cli
 	git clone https://github.com/aruhier/gnome-terminal-colors-solarized.git
@@ -35,9 +30,20 @@ fi
 cd ~
 
 # pyenv
-sudo git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-sudo git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+sudo apt install python3-venv
+export PYENV_ROOT="~/.pyenv"
+sudo git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT
+sudo git clone https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv
 
+# power10k
+export ZSH_CUSTOM=~/.oh-my-zsh/custom
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+# autosuggestion
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTUM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTUM/plugins/zsh-syntax-highlighting
+
+#################################################
 sudo rm -r .zshrc
 sudo ln -s .dotfiles/zsh/.zshrc .zshrc
 
