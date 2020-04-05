@@ -1,4 +1,5 @@
 alias ipython=ipython3
 alias ipy=ipython
 
-
+alias deactivate='pyenv deactivate'
+alias activate='pyenv activate'
