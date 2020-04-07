@@ -33,20 +33,21 @@ cd ~
 # pyenv
 sudo apt install python3-venv
 export PYENV_ROOT=~/.pyenv
-sudo git clone --depth=1 https://github.com/pyenv/pyenv.git $PYENV_ROOT
-sudo git clone --depth=1 https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv
+git clone --depth=1 https://github.com/pyenv/pyenv.git $PYENV_ROOT
+git clone --depth=1 https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv
 
 
 # autosuggestion
 export ZSH_CUSTOM=~/.oh-my-zsh/custom
-sudo git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-sudo git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highligh$
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 #################################################
 sudo rm -r .zshrc
 sudo ln -s .dotfiles/zsh/.zshrc .zshrc
 
 # power10k
-sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+p10k configure
 
 exec "$SHELL"
