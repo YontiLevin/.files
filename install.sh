@@ -8,10 +8,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 	# solarized
-	sudo apt-get install dconf-cli
-	git clone --depth=1 https://github.com/aruhier/gnome-terminal-colors-solarized.git
-	cd gnome-terminal-colors-solarized
-	./install.sh
+#	sudo apt-get install dconf-cli
+#	git clone --depth=1 https://github.com/aruhier/gnome-terminal-colors-solarized.git
+#	cd gnome-terminal-colors-solarized
+#	./install.sh
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         # zsh
