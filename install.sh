@@ -1,5 +1,4 @@
 #!/bin/bash
-alias gcd1="git clone --depth=1"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	# zsh
@@ -10,7 +9,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 	# solarized
 	sudo apt-get install dconf-cli
-	gcd1 https://github.com/aruhier/gnome-terminal-colors-solarized.git
+	git clone --depth=1 https://github.com/aruhier/gnome-terminal-colors-solarized.git
 	cd gnome-terminal-colors-solarized
 	./install.sh
 
@@ -22,7 +21,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	
 	# solarized
 	cd ~/Documents;\
-	gcd1 https://github.com/altercation/solarized
+	git clone --depth=1 https://github.com/altercation/solarized
 	echo "go to Terminal > Preferences and import the color scheme"
 
 else
@@ -34,14 +33,14 @@ cd ~
 # pyenv
 sudo apt install python3-venv
 export PYENV_ROOT="~/.pyenv"
-sudo gcd1 https://github.com/pyenv/pyenv.git $PYENV_ROOT
-sudo gcd1 https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv
+sudo git clone --depth=1 https://github.com/pyenv/pyenv.git $PYENV_ROOT
+sudo git clone --depth=1 https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv
 
 
 # autosuggestion
 export ZSH_CUSTOM=~/.oh-my-zsh/custom
-sudo gcd1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTUM/plugins/zsh-autosuggestions
-sudo gdc1 https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTUM/plugins/zsh-syntax-highligh$
+sudo git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTUM/plugins/zsh-autosuggestions
+sudo git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTUM/plugins/zsh-syntax-highligh$
 
 #################################################
 sudo rm -r .zshrc
