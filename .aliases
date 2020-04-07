@@ -3,3 +3,10 @@ alias ipy=ipython
 
 alias deactivate='pyenv deactivate'
 alias activate='pyenv activate'
+
+
+# run private aliases
+FILE=~/.dotfiles/.private.aliases
+if [ -f "$FILE" ]; then 
+    source $FILE
+fi 
