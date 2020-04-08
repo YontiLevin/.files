@@ -4,6 +4,10 @@ alias ipy=ipython
 alias deactivate='pyenv deactivate'
 alias activate='pyenv activate'
 
+# pip stuff
+# pip freeze without dependencies 
+alias freeze="pip list --not-required --format=freeze | grep -v pip | grep -v setuptools"
+alias upip="pip install --upgrade pip"
 
 # run private aliases
 FILE=~/.dotfiles/.private.aliases
