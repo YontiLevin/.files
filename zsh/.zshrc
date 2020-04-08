@@ -121,3 +121,5 @@ function title {
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv time)
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
