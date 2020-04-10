@@ -1,3 +1,10 @@
+# terminal stuff
+
+alias z="source ~/.zshrc"
+alias zz="clear; z"
+alias zzz="cd ~; zz"
+
+# python
 alias ipython=ipython3
 alias ipy=ipython
 
@@ -8,6 +15,7 @@ alias activate='pyenv activate'
 # pip freeze without dependencies 
 alias freeze="pip list --not-required --format=freeze | grep -v pip | grep -v setuptools"
 alias upip="pip install --upgrade pip"
+
 
 # run private aliases
 FILE=~/.dotfiles/.private.aliases
