@@ -113,9 +113,8 @@ source $HOME/.dotfiles/.aliases
 # $ title tabName
 function title {
     export PIB="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-    echo -ne "\033]0;"$USERNAME on $OS@$PIB"\007"
+    echo -ne "\033]0;"$USERNAME on $PIB"\007"
 }
-title
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -125,3 +124,5 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv time)
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+title
