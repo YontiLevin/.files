@@ -44,5 +44,10 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/the
 cd ~
 sudo rm -r .zshrc
 sudo ln -s .dotfiles/zsh/.zshrc .zshrc
+sudo ln -s .dotfiles/screen/.screenrc .screenrc
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 
 source ~/.zshrc
