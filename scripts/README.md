@@ -1,3 +1,4 @@
 ## TODO:  
 * git exclude script  
-	* add alias
+	* add alias  
+* view all aliases
