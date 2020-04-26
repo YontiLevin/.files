@@ -18,7 +18,7 @@ alias upip="pip install --upgrade pip"
 
 
 # run private aliases
-FILE=~/.dotfiles/aliases/.private.aliases
+FILE=~/.files/aliases/.private.aliases
 if [ -f "$FILE" ]; then 
     source $FILE
 fi 

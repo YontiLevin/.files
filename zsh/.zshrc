@@ -6,8 +6,8 @@ eval "$(pyenv virtualenv-init -)"
 
 # Path to your oh-my-zsh installation.
 # export HOME_BKP="$HOME"
-# export ZSH="$HOME/.dotfiles/zsh/.oh-my-zsh"
-# export HOME="$HOME/.dotfiles/zsh"
+# export ZSH="$HOME/.files/zsh/.oh-my-zsh"
+# export HOME="$HOME/.files/zsh"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-source $HOME/.dotfiles/aliases/.aliases
+source $HOME/.files/aliases/.aliases
 
 # export HOME="$HOME_BKP"
 
