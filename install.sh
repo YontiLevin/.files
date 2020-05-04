@@ -45,6 +45,7 @@ cd ~
 sudo rm -r .zshrc
 sudo ln -s .files/zsh/.zshrc .zshrc
 sudo ln -s .files/screen/.screenrc .screenrc
+sudo ln -s .files/nano/.nanorc .nanorc
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
