@@ -22,3 +22,12 @@ FILE=~/.files/aliases/.private.aliases
 if [ -f "$FILE" ]; then 
     source $FILE
 fi 
+
+# run linux specific aliases
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	FILE=~/.files/aliases/.linux.aliases
+	if [ -f "$FILE" ]; then
+    		source $FILE
+	fi
+fi
+
