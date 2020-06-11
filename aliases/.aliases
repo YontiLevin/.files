@@ -1,8 +1,9 @@
 # terminal stuff
-
 alias z="source ~/.zshrc"
 alias zz="clear; z"
 alias zzz="cd ~; zz"
+alias h=history
+alias hg="history | grep"
 
 # python
 alias ipython=ipython3
