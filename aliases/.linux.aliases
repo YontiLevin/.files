@@ -1,0 +1,2 @@
+# open pdf/jpg/etc
+alias open="xdg-open"

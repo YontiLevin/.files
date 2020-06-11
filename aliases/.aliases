@@ -1,8 +1,9 @@
 # terminal stuff
-
 alias z="source ~/.zshrc"
 alias zz="clear; z"
 alias zzz="cd ~; zz"
+alias h=history
+alias hg="history | grep"
 
 # python
 alias ipython=ipython3
@@ -26,3 +27,12 @@ FILE=~/.files/aliases/.private.aliases
 if [ -f "$FILE" ]; then 
     source $FILE
 fi 
+
+# run linux specific aliases
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	FILE=~/.files/aliases/.linux.aliases
+	if [ -f "$FILE" ]; then
+    		source $FILE
+	fi
+fi
+
