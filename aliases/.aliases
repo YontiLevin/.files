@@ -16,6 +16,10 @@ alias activate='pyenv activate'
 alias freeze="pip list --not-required --format=freeze | grep -v pip | grep -v setuptools"
 alias upip="pip install --upgrade pip"
 
+# nvidia-smi watch
+if [ -x "$(command -v nvidia-smi)" ]; then
+  alias smi="watch -n 1 nvidia-smi"
+fi
 
 # run private aliases
 FILE=~/.files/aliases/.private.aliases
