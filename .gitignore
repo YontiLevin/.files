@@ -6,3 +6,5 @@ zsh/.zcomp*
 bash
 
 .private.*
+
+gnome-terminal-colors-solarized/*
