@@ -6,10 +6,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	sudo apt update
 	sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 	libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-	xz-utils tk-dev libffi-dev liblzma-dev python-openssl git	
+	xz-utils tk-dev libffi-dev liblzma-dev python-openssl git ncdu 
 
 	# pyenv
-	sudo apt install python3-venv
+	sudo apt install -y python3-venv
 	export PYENV_ROOT=~/.pyenv
 	git clone --depth=1 https://github.com/pyenv/pyenv.git $PYENV_ROOT
 	git clone --depth=1 https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv
