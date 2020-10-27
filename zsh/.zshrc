@@ -126,3 +126,13 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 title
+
+# add github ssh key to agent
+FILE=~/.ssh/github_key
+if [ -f "$FILE" ]; then 
+    source $FILE
+fi 
+
+export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}$ 
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
