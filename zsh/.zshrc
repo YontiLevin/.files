@@ -129,10 +129,17 @@ title
 
 # add github ssh key to agent
 FILE=~/.ssh/github_key
-if [ -f "$FILE" ]; then 
-    source $FILE
-fi 
+if [ $(ps ax | grep ssh-agent | wc -l) -gt 0 ] ; then
+    echo "ssh-agent is already running"
+else
+    eval $(ssh-agent -s)
+    if [ "$(ssh-add -l)" == "The agent has no identities." ] ; then
+        if [ -f "$FILE" ]; then
+		ssh-add $FILE
+        fi
+    fi
+fi
 
-export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}$ 
-export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+#export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}$ 
+#export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
