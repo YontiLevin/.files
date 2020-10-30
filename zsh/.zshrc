@@ -129,14 +129,13 @@ title
 
 # add github ssh key to agent
 FILE=~/.ssh/github_key
-if [ $(ps ax | grep ssh-agent | wc -l) -gt 0 ] ; then
-    echo "ssh-agent is already running"
-else
-    eval "$(ssh-agent -s)"
-    if [ "$(ssh-add -l)" == "The agent has no identities." ] ; then
-        if [ -f "$FILE" ]; then
-	    ssh-add $FILE
-        fi
+eval "$(ssh-agent -s)"
+
+if [ -f "$FILE" ]; then
+    if [ $( ssh-add -l | grep -q "$FILE" ) ]; then
+        echo "github key already set"
+    else
+	ssh-add "$FILE"
     fi
 fi
 
