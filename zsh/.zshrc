@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #  If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.pyenv/bin:$PATH"
@@ -128,17 +135,18 @@ eval "$(pyenv virtualenv-init -)"
 title
 
 # add github ssh key to agent
-FILE=~/.ssh/github_key
-eval "$(ssh-agent -s)"
+#FILE=~/.ssh/github_key
+#eval "$(ssh-agent -s)"
 
-if [ -f "$FILE" ]; then
-    if [ $( ssh-add -l | grep -q "$FILE" ) ]; then
-        echo "github key already set"
-    else
-	ssh-add "$FILE"
-    fi
-fi
+#if [ -f "$FILE" ]; then
+#    if [ $( ssh-add -l | grep -q "$FILE" ) ]; then
+#        echo "github key already set"
+#    else
+#	ssh-add "$FILE"
+#    fi
+#fi
+
+source ~/.files/scripts/start_ssh_agent.sh
 
 #export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}$ 
 #export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-
