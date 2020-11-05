@@ -22,6 +22,6 @@ else
 fi
 
 GITHUB_KEY=~/.ssh/github_key
-if [ -f "$FILE" ]; then
-    ssh-add "$FILE"
+if [ -f "$GITHUB_KEY" ]; then
+    ssh-add "$GITHUB_KEY"
 fi
