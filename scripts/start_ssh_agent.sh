@@ -23,5 +23,5 @@ fi
 
 GITHUB_KEY=~/.ssh/github_key
 if [ -f "$GITHUB_KEY" ]; then
-    ssh-add "$GITHUB_KEY"
+    ssh-add -l |grep -q $(ssh-keygen -lf ~/.ssh/github_key  | awk '{print $2}') || ssh-add ~/.ssh/github_key > /dev/null
 fi
