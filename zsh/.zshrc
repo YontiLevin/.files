@@ -146,7 +146,7 @@ title
 #    fi
 #fi
 
-source ~/.files/scripts/start_ssh_agent.sh
+#source ~/.files/scripts/start_ssh_agent.sh
 
 #export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}$ 
 #export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
